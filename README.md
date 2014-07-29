@@ -1,26 +1,23 @@
-angular-google-places-autocomplete
-================
+angular-google-maps
+===================
 
 Angular directive for the Google Places Autocomplete component.
+
+Provides support for dynamic marker updates based on changes to the model.
 
 Installation
 ------------
 
-Install via bower: `bower install angular-google-places-autocomplete`
+Install via bower: `bower install angular-g-maps`
 
-Or if you're old skool, copy `src/autocomplete.js` into your project.
+Or if you're old skool, copy `src/google-maps.js` into your project.
 
-Then add the script to your page (be sure to include the Google Places API and underscore as well):
-
-```html
-<script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
-<script src="/bower_components/angular-google-places-autocomplete/src/autocomplete.js"></script>
-```
-
-You'll probably also want the styles:
+Then add the script to your page (be sure to include the Google Maps API and underscore as well):
 
 ```html
-<link rel="stylesheet" href="/bower_components/angular-google-places-autocomplete/src/autocomplete.css">
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="/bower_components/underscore/underscore.js"></script>
+<script src="/bower_components/angular-google-maps/src/google-maps.js"></script>
 ```
 
 Usage
@@ -29,26 +26,20 @@ Usage
 First add the dependency to your app:
 
 ```javascript
-angular.module('myApp', ['google.places']);
+angular.module('myApp', ['google.maps']);
 ```
 
-Then you can use the directive on text inputs like so:
+Then you can use the directive like so:
 
 ```html
-<input type="text" g-places-autocomplete ng-model="myScopeVar" />
+<div g-map options="myMapOptions" markers="myMapMarkers" fit-to-markers="true"></div>
 ```
-
-The directive also supports the following _optional_ attributes:
-
-* forceSelection &mdash; forces the user to select from the dropdown. Defaults to `false`.
-* options &mdash; See [google.maps.places.AutocompleteRequest object specification](https://developers.google.com/maps/documentation/javascript/reference#AutocompletionRequest).
 
 Examples
 --------
 
 * [Basic](example/basic.html)
-* [Options](example/options.html)
-* [Force selection](example/force-selection.html)
+* [Markers](example/markers.html)
 
 Issues or feature requests
 --------------------------
