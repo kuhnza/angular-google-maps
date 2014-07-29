@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Basic Usage</title>
+    <title>Markers</title>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
     <style>
@@ -26,7 +26,7 @@
         angular.module('example', ['google.maps'])
 
                 // Setup a basic controller with a scope variable 'place'
-                .controller('MainCtrl', function ($scope, $window) {
+                .controller('MainCtrl', function ($scope, $interval) {
                     $scope.map = {
                         options: {
                             center: {lat: -33.8755767, lng: 151.2088976},
@@ -43,6 +43,10 @@
 							}
 						}
                     };
+
+					$interval(function () {
+						$scope.map.markers.two.position.lat += 0.0004;
+					}, 2000);
                 });
     </script>
 </head>
@@ -52,7 +56,7 @@
             <div class="col-md-12">
                 <h1>Markers</h1>
 
-                <div g-map options="map.options" markers="map.markers"></div>
+                <div g-map options="map.options" markers="map.markers" fit-to-markers="true"></div>
             </div>
         </div>
     </div>

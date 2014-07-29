@@ -14,7 +14,8 @@ angular.module('google.maps', [])
 			restrict: 'A',
 			scope: {
 				markerConfigs: '=markers',
-				options: '=?'
+				options: '=?',
+				fitToMarkers: '=?'
 			},
 			link: function ($scope, element) {
 				var maps = $window.google.maps,
@@ -22,6 +23,7 @@ angular.module('google.maps', [])
 					markers = {};
 
 				$scope.markerConfigs = $scope.markerConfigs || {};
+				$scope.fitToMarkers = !!($scope.fitToMarkers);
 
 				updateMarkers();
 
@@ -45,7 +47,7 @@ angular.module('google.maps', [])
 						bounds.extend(marker.getPosition());
 					});
 
-					if (markerCount() > 0) {
+					if ($scope.fitToMarkers && markerCount() > 0) {
 						map.fitBounds(bounds);
 					}
 				}
