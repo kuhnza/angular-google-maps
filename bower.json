@@ -1,9 +1,9 @@
 {
   "name": "angular-g-maps",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": [
-      "/src/google-maps.js",
-      "/dist/google-maps.min.js"
+      "/src/g-maps.js",
+      "/dist/g-maps.min.js"
   ],
   "dependencies": {
     "angular": "1.2.x",
