@@ -10,14 +10,14 @@ Installation
 
 Install via bower: `bower install angular-g-maps`
 
-Or if you're old skool, copy `src/google-maps.js` into your project.
+Or if you're old skool, copy `src/g-maps.js` into your project.
 
 Then add the script to your page (be sure to include the Google Maps API and underscore as well):
 
 ```html
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <script src="/bower_components/underscore/underscore.js"></script>
-<script src="/bower_components/angular-google-maps/src/google-maps.js"></script>
+<script src="/bower_components/angular-g-maps/src/g-maps.js"></script>
 ```
 
 Usage

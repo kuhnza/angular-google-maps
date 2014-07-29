@@ -1,6 +1,6 @@
 {
-  "name": "angular-google-maps",
-  "version": "0.0.1",
+  "name": "angular-g-maps",
+  "version": "0.0.2",
   "main": [
       "/src/google-maps.js",
       "/dist/google-maps.min.js"

@@ -30,7 +30,7 @@ module.exports = function (grunt) {
 		uglify: {
 			dist: {
 				files: {
-					'dist/google-maps.min.js': 'src/google-maps.js'
+					'dist/g-maps.min.js': 'src/g-maps.js'
 				}
 			}
 		}
