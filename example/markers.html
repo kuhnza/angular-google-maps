@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="example">
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basic Usage</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <style>
+		div[g-map] {
+			width: 600px;
+			height: 400px;
+		}
+    </style>
+
+    <!-- Required dependencies -->
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="lib/underscore/underscore.js"></script>
+    <script src="lib/angular/angular.js"></script>
+
+    <!-- Google Places Autocomplete directive -->
+    <script src="../src/google-maps.js"></script>
+
+    <script>
+        angular.module('example', ['google.maps'])
+
+                // Setup a basic controller with a scope variable 'place'
+                .controller('MainCtrl', function ($scope, $window) {
+                    $scope.map = {
+                        options: {
+                            center: {lat: -33.8755767, lng: 151.2088976},
+                            zoom: 10
+                        },
+                        markers: {
+							one: {
+								position: {lat: -33.8755767, lng: 151.2088976},
+								icon: 'https://chart.googleapis.com/chart?chst=d_map_pin_letter_withshadow&chld=A|FF0000|000000'
+							},
+							two: {
+								position: {lat: -33.8785767, lng: 151.2028976},
+								icon: 'https://chart.googleapis.com/chart?chst=d_map_pin_letter_withshadow&chld=B|00FF00|000000'
+							}
+						}
+                    };
+                });
+    </script>
+</head>
+<body ng-controller="MainCtrl">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Markers</h1>
+
+                <div g-map options="map.options" markers="map.markers"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
